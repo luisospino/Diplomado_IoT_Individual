@@ -40,6 +40,9 @@
 void encender_led_verde();
 void apagar_led_verde();
 
+void encender_led_rojo();
+void apagar_led_rojo();
+
 /** @} */ // end of X group
 /** @} */ // end of X group
 
