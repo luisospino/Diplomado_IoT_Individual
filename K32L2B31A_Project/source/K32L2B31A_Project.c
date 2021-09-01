@@ -61,22 +61,34 @@ int main(void) {
     BOARD_InitDebugConsole();
 #endif
 
-    PRINTF("Hello World\n");
+    printf("Inicia");
 
     /* Force the counter to be placed into memory. */
     volatile static int i = 0 ;
     /* Enter an infinite loop, just incrementing a counter. */
+    bool cambio = false;
+
     while(1) {
         i++ ;
 
-        encender_led_verde();
-		delay_block();
-		apagar_led_verde();
-		delay_block();
-        /* 'Dummy' NOP to allow source level single stepping of
-            tight while() loop */
-        __asm volatile ("nop");
+        for(short k = 0; k < 10 ; k++ ) {
+			encender_led_verde();
+			delay_block();
+			apagar_led_verde();
+			delay_block();
+		}
+
+		if( !cambio ){
+			cambio = true;
+			encender_led_rojo();
+			delay_block();
+		}else{
+			cambio = false;
+			apagar_led_rojo();
+			delay_block();
+		}
     }
+
     return 0 ;
 }
 
