@@ -20,6 +20,8 @@
 #include "K32L2B31A.h"
 #include "fsl_debug_console.h"
 
+#include "leds.h"
+
 /*******************************************************************************
  * Definitions
  ******************************************************************************/
@@ -43,6 +45,11 @@
  * Private Source Code
  ******************************************************************************/
 
+void delay_block( void ){
+	uint32_t i;
+	for(i = 0; i < 0x1B3331 ; i++);
+}
+
 int main(void) {
 
     /* Init board hardware. */
@@ -61,6 +68,11 @@ int main(void) {
     /* Enter an infinite loop, just incrementing a counter. */
     while(1) {
         i++ ;
+
+        encender_led_verde();
+		delay_block();
+		apagar_led_verde();
+		delay_block();
         /* 'Dummy' NOP to allow source level single stepping of
             tight while() loop */
         __asm volatile ("nop");
