@@ -21,6 +21,7 @@
 #include "fsl_debug_console.h"
 
 #include "leds.h"
+#include "sensor_luz.h"
 
 /*******************************************************************************
  * Definitions
@@ -51,7 +52,7 @@ void delay_block( void ){
 }
 
 int main(void) {
-
+	uint32_t adc_sensor_luz;
     /* Init board hardware. */
     BOARD_InitBootPins();
     BOARD_InitBootClocks();
@@ -61,7 +62,7 @@ int main(void) {
     BOARD_InitDebugConsole();
 #endif
 
-    printf("Inicia");
+    //printf("Inicia");
 
     /* Force the counter to be placed into memory. */
     volatile static int i = 0 ;
@@ -71,7 +72,7 @@ int main(void) {
     while(1) {
         i++ ;
 
-        for(short k = 0; k < 10 ; k++ ) {
+        for(short k = 0; k < 3 ; k++ ) {
 			encender_led_verde();
 			delay_block();
 			apagar_led_verde();
@@ -87,6 +88,8 @@ int main(void) {
 			apagar_led_rojo();
 			delay_block();
 		}
+
+		printf("%i - ", sensorDeLuzObtenerDatoADC());
     }
 
     return 0 ;
