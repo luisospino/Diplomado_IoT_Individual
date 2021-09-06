@@ -1,24 +1,25 @@
-/*! @file : leds.h
+/*! @file : botones.h
  * @author  Luis Ospino
  * @version 1.0.0
- * @date    Aug 31, 2021
- * @brief   Driver para controlar LEDs de tarjeta FRDM-K32L3B3
+ * @date    Sep 6, 2021
+ * @brief   Driver para lectura de botones
  * @details
  *
  */
-#ifndef IOT_SKD_PERIPHERALS_LEDS_H_
-#define IOT_SKD_PERIPHERALS_LEDS_H_
+#ifndef IOT_SKD_PERIPHERALS_BOTONES_H_
+#define IOT_SKD_PERIPHERALS_BOTONES_H_
 /*******************************************************************************
  * Includes
  ******************************************************************************/
-
+#include "peripherals.h"
+#include "fsl_gpio.h"
 
 /*!
- * @addtogroup X
+ * @addtogroup PERIPHERALS
  * @{
  */
 /*!
- * @addtogroup X
+ * @addtogroup BOTONES
  * @{
  */
 /*******************************************************************************
@@ -36,15 +37,10 @@
 /*******************************************************************************
  * Public Prototypes
  ******************************************************************************/
+bool boton1LeerEstado();
+bool boton2LeerEstado();
 
-void encender_led_verde();
-void apagar_led_verde();
+/** @} */ // end of BOTONES group
+/** @} */ // end of PERIPHERALS group
 
-void encender_led_rojo();
-void apagar_led_rojo();
-void toggle_led_rojo();
-
-/** @} */ // end of X group
-/** @} */ // end of X group
-
-#endif /* IOT_SKD_PERIPHERALS_LEDS_H_ */
+#endif /* IOT_SKD_PERIPHERALS_BOTONES_H_ */

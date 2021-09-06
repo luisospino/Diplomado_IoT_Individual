@@ -1,24 +1,23 @@
-/*! @file : leds.h
+/*! @file : irq_lptmr0.h
  * @author  Luis Ospino
  * @version 1.0.0
- * @date    Aug 31, 2021
- * @brief   Driver para controlar LEDs de tarjeta FRDM-K32L3B3
+ * @date    Sep 6, 2021
+ * @brief   Driver para IQR LPTMR
  * @details
  *
  */
-#ifndef IOT_SKD_PERIPHERALS_LEDS_H_
-#define IOT_SKD_PERIPHERALS_LEDS_H_
+#ifndef IOT_SDK_IRQ_IRQ_LPTMR0_H_
+#define IOT_SDK_IRQ_IRQ_LPTMR0_H_
 /*******************************************************************************
  * Includes
  ******************************************************************************/
-
-
+#include "peripherals.h"
 /*!
- * @addtogroup X
+ * @addtogroup IRQ
  * @{
  */
 /*!
- * @addtogroup X
+ * @addtogroup LPTRM0
  * @{
  */
 /*******************************************************************************
@@ -32,19 +31,13 @@
 /*******************************************************************************
  * Public vars
  ******************************************************************************/
+extern volatile uint32_t lptmr0_iqr_counter;
 
 /*******************************************************************************
  * Public Prototypes
  ******************************************************************************/
 
-void encender_led_verde();
-void apagar_led_verde();
+/** @} */ // end of LPTRM0 group
+/** @} */ // end of IRQ group
 
-void encender_led_rojo();
-void apagar_led_rojo();
-void toggle_led_rojo();
-
-/** @} */ // end of X group
-/** @} */ // end of X group
-
-#endif /* IOT_SKD_PERIPHERALS_LEDS_H_ */
+#endif /* IOT_SDK_IRQ_IRQ_LPTMR0_H_ */
