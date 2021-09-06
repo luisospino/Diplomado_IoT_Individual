@@ -21,7 +21,9 @@
 /*******************************************************************************
 * Private Prototypes
 ******************************************************************************/
+void sensorDeLuzIniciarCaptura();
 
+void sensorDeLuzEsperarResultado();
 
 /*******************************************************************************
 * External vars
@@ -45,7 +47,6 @@ void sensorDeLuzEsperarResultado(){
 	                      ADC16_GetChannelStatusFlags(SENSOR_LUZ_ADC16_BASE, SENSOR_LUZ_ADC16_CHANNEL_GROUP))){
 	}
 }
-
 
 /*******************************************************************************
 * Public Source Code
