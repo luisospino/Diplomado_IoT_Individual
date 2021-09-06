@@ -1,63 +1,68 @@
 /*! @file : leds.c
- * @author  Luis Ospino
- * @version 1.0.0
- * @date    Aug 31, 2021
- * @brief   Driver para controlar LEDs de tarjeta FRDM-K32L3B3
- * @details
- *
+* @author  Luis Ospino
+* @version 1.0.0
+* @date    Aug 31, 2021
+* @brief   Driver para controlar LEDs de tarjeta FRDM-K32L3B3
+* @details
+*
 */
 /*******************************************************************************
- * Includes
- ******************************************************************************/
+* Includes
+******************************************************************************/
 #include "leds.h"
 #include "fsl_gpio.h"
 #include "board.h"
 
 /*******************************************************************************
- * Definitions
- ******************************************************************************/
+* Definitions
+******************************************************************************/
 
 
 /*******************************************************************************
- * Private Prototypes
- ******************************************************************************/
+* Private Prototypes
+******************************************************************************/
 
 
 /*******************************************************************************
- * External vars
- ******************************************************************************/
+* External vars
+******************************************************************************/
 
 
 /*******************************************************************************
- * Local vars
- ******************************************************************************/
+* Local vars
+******************************************************************************/
 
 
 /*******************************************************************************
- * Private Source Code
- ******************************************************************************/
+* Private Source Code
+******************************************************************************/
 
 
 /*******************************************************************************
- * Public Source Code
- ******************************************************************************/
- void encender_led_verde(){
-	 //encender led verde
-	 GPIO_PinWrite(GPIOD, 5, 0);
- }
+* Public Source Code
+******************************************************************************/
+void encender_led_verde(){
+	//encender led verde
+	GPIO_PinWrite(GPIOD, 5, 0);
+}
 
- void apagar_led_verde(){
-	 //apagar led verde
-	 GPIO_PinWrite(GPIOD, 5, 1);
- }
+void apagar_led_verde(){
+	//apagar led verde
+	GPIO_PinWrite(GPIOD, 5, 1);
+}
 
- void encender_led_rojo(){
- 	 //encender led rojo
- 	 GPIO_PinWrite(GPIOE, 31U, 0);
-  }
+void encender_led_rojo(){
+	//encender led rojo
+	GPIO_PinWrite(GPIOE, 31U, 0);
+}
 
-  void apagar_led_rojo(){
- 	 //apagar led rojo
- 	 GPIO_PinWrite(GPIOE, 31U, 1);
-  }
+void apagar_led_rojo(){
+	//apagar led rojo
+	GPIO_PinWrite(GPIOE, 31U, 1);
+}
+
+void toggle_led_rojo(){
+	//intercambia estado de led rojo
+	GPIO_PortToggle(GPIOE, 1U<<31U);
+}
 
